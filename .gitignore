@@ -1,6 +1,7 @@
 # If you prefer the allow list template instead of the deny list, see community template:
 # https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
 #
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -11,22 +12,60 @@
 # Test binary, built with `go test -c`
 *.test
 
-# Code coverage profiles and other test artifacts
+# Output of the go build
 *.out
-coverage.*
-*.coverprofile
-profile.cov
-
-# Dependency directories (remove the comment below to include it)
-# vendor/
 
 # Go workspace file
 go.work
 go.work.sum
 
-# env file
-.env
+# Dependency directories
+node_modules
+web/test-results
+vendor/
 
-# Editor/IDE
-# .idea/
-# .vscode/
+# IDE specific files
+.vscode/
+.cursor/
+.cursor/skills/
+.cursor/rules/
+
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# API Keys and Secrets
+*.key
+*.pem
+secrets/
+
+# Build artifacts
+bin/
+dist/
+build/
+*.log
+_aether_result.txt
+
+# Temporary files
+tmp/
+temp/
+
+.vercel
+.env*.local
+
+#workspace_files
+istok-agent-core.code-workspace
+
+# ============ Keep These Files ============
+!.env.example
+!.gitignore
