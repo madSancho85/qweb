@@ -1,0 +1,64 @@
+version: "2"
+run:
+  concurrency: 16
+linters:
+  default: all
+  disable:
+    - wsl
+    - wsl_v5
+    - dupl
+    - containedctx
+    - cyclop
+    - exhaustruct
+    - funlen
+    - gochecknoglobals
+    - gosmopolitan
+    - ireturn
+    - lll
+    - mnd
+    - nonamedreturns
+    - tagalign
+    - varnamelen
+  settings:
+    tagliatelle:
+      case:
+        rules:
+          json: snake
+    staticcheck:
+      checks:
+        - all
+    # context: all — только *Context; no-global: all — без slog.Default/SetDefault.
+    sloglint:
+      static-msg: true
+      key-naming-case: camel
+      context: all
+      no-global: all
+      forbidden-keys:
+        - time
+        - level
+        - msg
+        - source
+# Общие исключения
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+    - gofmt
+    - gofumpt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
