@@ -8,6 +8,7 @@
 *.dll
 *.so
 *.dylib
+qweb
 
 # Test binary, built with `go test -c`
 *.test
